@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:09:29 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/16 17:07:02 by noshiro          ###   ########.fr       */
+/*   Created: 2022/05/30 22:21:47 by pantti            #+#    #+#             */
+/*   Updated: 2022/06/09 00:57:25 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 char				*ft_strtrim(char const	*s1, char const *set);
 #endif

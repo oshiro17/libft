@@ -6,8 +6,22 @@
 /*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:21:56 by pantti            #+#    #+#             */
-/*   Updated: 2022/06/09 00:22:17 by pantti           ###   ########.fr       */
+/*   Updated: 2022/06/09 12:51:12 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+}

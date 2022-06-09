@@ -5,9 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 00:23:04 by pantti            #+#    #+#             */
-/*   Updated: 2022/06/09 00:25:52 by pantti           ###   ########.fr       */
+/*   Created: 2022/05/28 20:53:01 by tsato             #+#    #+#             */
+/*   Updated: 2022/06/09 12:49:06 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (s == NULL)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}

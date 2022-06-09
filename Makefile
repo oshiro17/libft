@@ -6,7 +6,7 @@
 #    By: pantti <pantti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 13:47:57 by noshiro           #+#    #+#              #
-#    Updated: 2022/06/09 00:34:16 by pantti           ###   ########.fr        #
+#    Updated: 2022/06/09 12:40:26 by pantti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c \
 					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
 					ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c ft_itoa.c \
 					ft_striteri.c ft_putchar_fd.c \
-					# ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS			= $(SRCS:.c=.o)
 
 CC				= cc

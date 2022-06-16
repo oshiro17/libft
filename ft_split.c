@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:45:38 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/27 17:11:27 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/16 14:49:03 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,88 +14,72 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static unsigned int	element_count(char const *s, char c)
+char	**free_all_element(char **s, size_t idx)
 {
-	unsigned int	i;
-	unsigned int	nb_strs;
-
-	if (s[0] == '\0')
-		return (0);
-	i = 0;
-	nb_strs = 0;
-	while (s[i])
+	while (0 < idx)
 	{
-		if (s[i] != c)
+		free(s[idx]);
+		s[idx--] = NULL;
+	}
+	free(s);
+	return (NULL);
+}
+
+size_t	element_cnt(char const *s, char c)
+{
+	size_t	cnt;
+
+	cnt = 0;
+	while (*s)
+	{
+		if (*s != c)
 		{
-			nb_strs++;
-			while (s[i] && s[i] != c)
-				i++;
+			cnt++;
+			while (*s && *s != c)
+				s++;
 		}
-		else
-			i++;
+		while (*s && *s == c)
+			s++;
 	}
-	return (nb_strs);
+	return (cnt);
 }
 
-static int	ffree(char **str, int size)
+char	**element_cpy(char const *s, char **split, char c, size_t elem_cnt)
 {
-	while (size--)
-		free(str[size]);
-	return (-1);
-}
+	size_t	idx;
+	size_t	len;
 
-static void	write_word(char *dest, const char *from, char charset)
-{
-	int	i;
-
-	i = 0;
-	while ((from[i] == charset || from[i] == '\0') == 0)
+	idx = 0;
+	while (*s && idx < elem_cnt)
 	{
-		dest[i] = from[i];
-		i++;
-	}
-	dest[i] = '\0';
-}
-
-static int	write_split(char **split, const char *str, char charset)
-{
-	int		i;
-	int		j;
-	int		element;
-
-	element = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == charset)
-			i++;
-		else
+		len = 0;
+		while (*s && *s == c)
+			s++;
+		while (*(s + len) && *(s + len) != c)
+			len++;
+		if (len)
 		{
-			j = 0;
-			while ((str[i + j] != charset && str[i + j] != '\0'))
-				j++;
-			split[element] = (char *)malloc(sizeof(char) * (j + 1));
-			if (split[element] == NULL)
-				return (ffree(split, element - 1));
-			write_word(split[element], str + i, charset);
-			i = i + j;
-			element++;
+			split[idx] = ft_substr(s, 0, len);
+			if (!(split[idx]))
+				return (free_all_element(&split[idx], idx));
+			idx++;
 		}
+		s += len;
 	}
-	return (0);
+	split[idx] = NULL;
+	return (split);
 }
 
-char	**ft_split(const char *str, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	int		len_element;
+	size_t	elem_cnt;
+	char	**split;
 
-	len_element = element_count(str, c);
-	res = (char **)malloc(sizeof(char *) * (len_element + 1));
-	if (res == NULL)
+	if (!s)
 		return (NULL);
-	res[len_element] = NULL;
-	if (write_split(res, str, c) == -1)
+	elem_cnt = element_cnt(s, c);
+	split = (char **)malloc((elem_cnt + 1) * sizeof(char *));
+	if (!split)
 		return (NULL);
-	return (res);
+	return (element_cpy(s, split, c, elem_cnt));
 }

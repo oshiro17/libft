@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 15:23:55 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/27 17:13:58 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:20:34 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb >= SIZE_MAX || size >= SIZE_MAX)
-		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
+
+//nmemb * sizesize_tの範囲を超えてしまってる時、
+//mallocに任しちゃう

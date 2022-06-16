@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 18:56:26 by noshiro           #+#    #+#             */
-/*   Updated: 2022/04/26 15:16:39 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/14 15:54:43 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void	*buf, int	ch, size_t	n)
 {
 	size_t	i;
 
-	if (!buf)
-		return (0);
 	i = 0;
 	while (i < n)
 	{
@@ -25,5 +23,7 @@ void	*ft_memset(void	*buf, int	ch, size_t	n)
 		buf++;
 		i++;
 	}
-	return (buf);
+	return (buf - i);
 }
+
+//bufがnullの時はsegfaultするのが本家の挙動

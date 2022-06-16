@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:11:43 by noshiro           #+#    #+#             */
-/*   Updated: 2022/04/26 15:16:25 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/14 16:55:25 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,32 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*p1;
-	char	*p2;
+	char	*str_dst;
+	char	*str_src;
 
-	p1 = (char *)dst;
-	p2 = (char *)src;
+	str_dst = (char *)dst;
+	str_src = (char *)src;
+	if (!dst && !src)
+		return (NULL);
 	while (n-- > 0)
 	{
-		*p1 = *p2;
-		p1++;
-		p2++;
+		*str_dst = *str_src;
+		str_dst++;
+		str_src++;
 	}
 	return (dst);
 }
+
+//この関数はmemmoveと違ってアドレスが重なってたら未定義
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char buf[] = "ABCDDEFG";
+// 	char duf[] = "ABCDDEFG";
+
+// 	memcpy(buf,"skjhdfshfkjlssjdnbfl",0);
+// 	ft_memcpy(duf,"skjhdfshfkjlssjdnbfl",0);
+// 	printf("original→%s\n",buf);
+// 	printf("nonoka→%s\n",duf);
+// 	return 0;
+// }

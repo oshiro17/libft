@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 16:35:11 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/14 16:52:18 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/16 15:47:15 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 //dstのアドレスがsrcのアドレスよりも後ろの時は前　からコピー
 //srcのアドレスがdstのアドレスよりも前　の時は後ろからコピー
-#include <stdio.h>
-int main(void)
-{
-	char buf[] = "ABCDDEFG";
-	char duf[] = "ABCDDEFG";
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char buf[] = "ABCDDEFG";
+// 	char duf[] = "ABCDDEFG";
 
-	memmove(buf,"skjhdfshfkjlssjdnbfl",0);
-	ft_memmove(duf,"skjhdfshfkjlssjdnbfl",0);
-	printf("original→%s\n",buf);
-	printf("nonoka→%s\n",duf);
-	return 0;
-}
+// 	memmove(buf,"skjhdfshfkjlssjdnbfl",0);
+// 	ft_memmove(duf,"skjhdfshfkjlssjdnbfl",0);
+// 	printf("original→%s\n",buf);
+// 	printf("nonoka→%s\n",duf);
+// 	return 0;
+// }

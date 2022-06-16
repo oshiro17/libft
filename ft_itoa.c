@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:27:51 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/29 18:14:07 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/16 15:47:51 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	count_digits(int n)
 		n = n / 10;
 		digits_num++;
 	}
-	return(digits_num);
+	return (digits_num);
 }
 
 char	*ft_itoa(int n)
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	}
 	digits_num = digits_num + count_digits(n);
 	str_num = (char *)malloc(sizeof(char) * (digits_num + 1));
-	if(!str_num)
+	if (!str_num)
 		return (NULL);
 	*(str_num + digits_num) = 0;
 	while (digits_num--)
@@ -52,6 +52,7 @@ char	*ft_itoa(int n)
 		*(str_num + 0) = '-';
 	return (str_num);
 }
+
 //#include <stdio.h>
 // int main(void)
 // {

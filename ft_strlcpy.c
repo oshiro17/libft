@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:10:12 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/14 18:54:03 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/16 15:37:04 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	count;
 	size_t	dest_len;
- 
+
 	dest_len = ft_strlen(dest);
 	if (dest_len < size)
 		size = dest_len;

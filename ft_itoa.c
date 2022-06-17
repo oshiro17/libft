@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:27:51 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/17 00:15:15 by pantti           ###   ########.fr       */
+/*   Updated: 2022/06/17 17:26:53 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 size_t	count_digits(int n)
 {
 	size_t	digits_num;
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 		digits_num++;
 	}
 	digits_num = digits_num + count_digits(n);
-	str_num = (char *)ft_calloc(sizeof(char),(digits_num + 1));
+	str_num = (char *)ft_calloc(sizeof(char), (digits_num + 1));
 	if (!str_num)
 		return (NULL);
 	while (digits_num--)

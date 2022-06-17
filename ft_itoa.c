@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:27:51 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/16 15:47:51 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 00:15:15 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,16 @@ char	*ft_itoa(int n)
 		digits_num++;
 	}
 	digits_num = digits_num + count_digits(n);
-	str_num = (char *)malloc(sizeof(char) * (digits_num + 1));
+	str_num = (char *)ft_calloc(sizeof(char),(digits_num + 1));
 	if (!str_num)
 		return (NULL);
-	*(str_num + digits_num) = 0;
 	while (digits_num--)
 	{
 		*(str_num + digits_num) = nb % 10 + '0';
 		nb = nb / 10;
 	}
 	if (n < 0)
-		*(str_num + 0) = '-';
+		*(str_num) = '-';
 	return (str_num);
 }
 

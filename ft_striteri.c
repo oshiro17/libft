@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:52:29 by pantti            #+#    #+#             */
-/*   Updated: 2022/06/16 15:43:26 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 01:10:05 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 	return ;
 }
+
+// #include "stdio.h"
+// #include "string.h"
+// void ft_nonoka(unsigned int i, char *chr)
+// {
+// 	printf("%d,は%c",i,*chr);
+// }
+// int main(void){
+// 	ft_striteri("sflskjdlfkjsl",ft_nonoka);
+// 	return(0);
+// }

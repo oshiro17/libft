@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:11:43 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/14 16:55:25 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 00:29:54 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*str_dst;
 	char	*str_src;
 
-	str_dst = (char *)dst;
-	str_src = (char *)src;
 	if (!dst && !src)
 		return (NULL);
+	str_dst = (char *)dst;
+	str_src = (char *)src;
 	while (n-- > 0)
 	{
 		*str_dst = *str_src;

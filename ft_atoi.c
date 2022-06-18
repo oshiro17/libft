@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 15:41:05 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/17 17:37:13 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:17:48 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	ft_atoi(const char *str)
 	return (k * z);
 }
 
-// intの範囲を超える時は回っちゃう
-#include "stdio.h"
-#include "string.h"
+// // intの範囲を超える時は回っちゃう
+// #include "stdio.h"
+// #include "string.h"
 
-int main()
-{
-	printf("original :%d\n", atoi("29387294"));
-	printf("nonoka :%d\n", ft_atoi("29387294"
-	));
-	return 0;
-}
+// int main()
+// {
+// 	printf("original :%d\n", atoi("29387294"));
+// 	printf("nonoka :%d\n", ft_atoi("29387294"
+// 	));
+// 	return 0;
+// }

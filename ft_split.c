@@ -6,13 +6,11 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:45:38 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/16 15:45:11 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:46:23 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 char	**free_all_element(char **s, size_t idx)
 {

@@ -6,11 +6,12 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:13:28 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/16 15:39:47 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:50:51 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_strncmp(const char	*s1, const char	*s2, size_t	n)
 {
 	unsigned char	*s_s1;

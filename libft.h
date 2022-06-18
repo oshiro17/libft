@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 22:21:47 by pantti            #+#    #+#             */
-/*   Updated: 2022/06/09 00:57:25 by pantti           ###   ########.fr       */
+/*   Updated: 2022/06/17 18:40:56 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//#include  <stdio.h>	//提出の時はコメントアウろ
-# include <string.h>
+// # include <stdio.h>
+// # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 void				*ft_memset(void *dest, int c, size_t n);

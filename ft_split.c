@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:45:38 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/17 18:46:23 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/18 15:31:34 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**free_all_element(char **s, size_t idx)
+static	char	**free_all_element(char **s, size_t idx)
 {
 	while (0 < idx)
 	{
@@ -23,7 +23,7 @@ char	**free_all_element(char **s, size_t idx)
 	return (NULL);
 }
 
-size_t	element_cnt(char const *s, char c)
+static	size_t	element_cnt(char const *s, char c)
 {
 	size_t	cnt;
 
@@ -42,7 +42,7 @@ size_t	element_cnt(char const *s, char c)
 	return (cnt);
 }
 
-char	**element_cpy(char const *s, char **split, char c, size_t elem_cnt)
+static	char	**element_cpy(char const *s, char **split, char c, size_t elem_cnt)
 {
 	size_t	idx;
 	size_t	len;

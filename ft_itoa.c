@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:27:51 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/17 17:26:53 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/18 15:36:12 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	count_digits(int n)
+static	size_t	count_digits(int n)
 {
 	size_t	digits_num;
 

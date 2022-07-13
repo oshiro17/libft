@@ -1,3 +1,4 @@
-liftTester
-.DS_Store
-.vscode
+.vscode	
+libftTester
+a.out
+libft.h.gch

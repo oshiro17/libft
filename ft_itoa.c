@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pantti <pantti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:27:51 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/29 18:14:07 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/18 15:36:12 by pantti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-size_t	count_digits(int n)
+#include "libft.h"
+static	size_t	count_digits(int n)
 {
 	size_t	digits_num;
 
@@ -22,7 +22,7 @@ size_t	count_digits(int n)
 		n = n / 10;
 		digits_num++;
 	}
-	return(digits_num);
+	return (digits_num);
 }
 
 char	*ft_itoa(int n)
@@ -39,19 +39,19 @@ char	*ft_itoa(int n)
 		digits_num++;
 	}
 	digits_num = digits_num + count_digits(n);
-	str_num = (char *)malloc(sizeof(char) * (digits_num + 1));
-	if(!str_num)
+	str_num = (char *)ft_calloc(sizeof(char), (digits_num + 1));
+	if (!str_num)
 		return (NULL);
-	*(str_num + digits_num) = 0;
 	while (digits_num--)
 	{
 		*(str_num + digits_num) = nb % 10 + '0';
 		nb = nb / 10;
 	}
 	if (n < 0)
-		*(str_num + 0) = '-';
+		*(str_num) = '-';
 	return (str_num);
 }
+
 //#include <stdio.h>
 // int main(void)
 // {

@@ -6,7 +6,7 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:54:50 by noshiro           #+#    #+#             */
-/*   Updated: 2022/05/09 15:05:52 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/17 16:02:21 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const	*s, unsigned int start, size_t len)
 	j = 0;
 	if (!s)
 		return (NULL);
-	if (strlen(s) < len)
-		sub = (char *)malloc((strlen(s) + 1));
+	if (ft_strlen(s) < len)
+		sub = (char *)malloc((ft_strlen(s) + 1));
 	else
 		sub = (char *)malloc((len + 1));
 	if (!sub)

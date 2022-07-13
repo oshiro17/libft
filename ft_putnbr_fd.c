@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 15:23:55 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/19 21:37:03 by noshiro          ###   ########.fr       */
+/*   Created: 2022/06/17 19:11:34 by noshiro           #+#    #+#             */
+/*   Updated: 2022/06/17 19:11:37 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*s1;
+	long	l_n;
 
-	if (count == 0 || size == 0)
+	l_n = (long)n;
+	if (l_n < 0)
 	{
-		count = 1;
-		size = 1;
+		ft_putchar_fd('-', fd);
+		l_n *= -1;
 	}
-	if (count > SIZE_MAX / size)
-		return (NULL);
-	s1 = malloc(count * size);
-	if (!s1)
-		return (NULL);
-	ft_bzero(s1, count * size);
-	return (s1);
+	if (9 < l_n)
+		ft_putnbr_fd(l_n / 10, fd);
+	ft_putchar_fd("0123456789"[l_n % 10], fd);
 }
-
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void)
-// {
-// 	void	*ptr;
-// 	ptr = ft_calloc(0, 0);
-// 	printf("%p",ptr);
-// 	return(0);
-// }

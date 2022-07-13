@@ -6,24 +6,39 @@
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:10:12 by noshiro           #+#    #+#             */
-/*   Updated: 2022/04/30 13:54:00 by noshiro          ###   ########.fr       */
+/*   Updated: 2022/06/19 14:56:39 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	count;
+	size_t	idx;
 
-	count = 0;
-	if (size <= 0)
-		return (ft_strlen(src));
-	while (src[count] != '\0' && count < (size - 1))
+	idx = 0;
+	while (src[idx] && idx + 1 < dstsize)
 	{
-		dest[count] = src[count];
-		count++;
+		dst[idx] = src[idx];
+		idx++;
 	}
-	dest[count] = '\0';
+	if (dstsize)
+		dst[idx] = '\0';
 	return (ft_strlen(src));
 }
+
+// copies up to dstsize - 1 characters from the string src to dst,
+// NUL-terminating the result if dstsize is not 0.
+//dstがNULLの時本家はsegmentation fault
+//srcがNULLの時本家はabort
+
+// #include<stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	char dst [] = "12345";
+// 	char src[] = "coucou";
+// 	printf("%d",ft_strlcpy(dst,NULL,8));
+// 	printf("%s",dst);
+// 	return(0);
+// }

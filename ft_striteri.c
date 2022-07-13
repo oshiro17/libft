@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noshiro <noshiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 15:23:55 by noshiro           #+#    #+#             */
-/*   Updated: 2022/06/19 21:37:03 by noshiro          ###   ########.fr       */
+/*   Created: 2022/05/30 22:52:29 by pantti            #+#    #+#             */
+/*   Updated: 2022/06/17 15:06:46 by noshiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	void	*s1;
+	unsigned int	i;
 
-	if (count == 0 || size == 0)
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		count = 1;
-		size = 1;
+		f(i, &s[i]);
+		i++;
 	}
-	if (count > SIZE_MAX / size)
-		return (NULL);
-	s1 = malloc(count * size);
-	if (!s1)
-		return (NULL);
-	ft_bzero(s1, count * size);
-	return (s1);
 }
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void)
+// #include "stdio.h"
+// #include "string.h"
+// void ft_nonoka(unsigned int i, char *chr)
 // {
-// 	void	*ptr;
-// 	ptr = ft_calloc(0, 0);
-// 	printf("%p",ptr);
+// 	printf("%d,は%c",i,*chr);
+// }
+// int main(void){
+// 	ft_striteri("sflskjdlfkjsl",ft_nonoka);
 // 	return(0);
 // }

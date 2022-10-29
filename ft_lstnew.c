@@ -9,15 +9,16 @@ t_list *ft_lstnew(void *content)
     return(new);
 }
 
-#include <stdio.h>
-int main(int argc, char const *argv[])
-{
-    t_list  *new;
-    char    str[] = "abc";
+// #include <stdio.h>
+// int main(void)
+// {
+//     t_list  *new;
+//     char    str[] = "abc";
 
-    new = ft_lstnew((void *)str);
-    printf("%s\n", (char *)(new->content));
-    printf("%p\n", new->next);
+//     new = ft_lstnew((void *)str);
+//     printf("%s\n", (char *)(new->content));
+//     printf("%p\n", new->next);
 
-    return 0;
-}
+//     return 0;
+// }
+

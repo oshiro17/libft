@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pantti <pantti@student.42.fr>              +#+  +:+       +#+         #
+#    By: panti <panti@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 13:47:57 by noshiro           #+#    #+#              #
-#    Updated: 2022/06/09 12:40:26 by pantti           ###   ########.fr        #
+#    Updated: 2023/07/05 00:36:53 by panti            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,18 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c \
 					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
 					ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c ft_itoa.c \
 					ft_striteri.c ft_putchar_fd.c \
-					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+					
+BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+					ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+					ft_lstmap.c
+					
 OBJS			= $(SRCS:.c=.o)
+BONUS_OBJS		= $(BONUS:.c=.o)
+
+ifdef WITH_BONUS
+OBJS += $(BONUS_OBJS)
+endif
 
 CC				= cc
 RM				= rm -f
@@ -33,11 +43,14 @@ $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
-.PHONY:			all clean fclean re
+bonus:
+				make WITH_BONUS=1
+
+.PHONY:			all clean fclean re bonus
